@@ -1,13 +1,13 @@
-name,username,email,password
-agent 5,agent5,abishekchinnaraju3@gmail.com,Demopass@1
-agent 7,agent7,abishekchinnaraju5@gmail.com,Demopass@1
-agent 6,agent6,abishekchinnaraju4@gmail.com,Demopass@1
-agent 8,agent8,rohan.sg92@yahoo.com,Demopass@1
-agent 9,agent9,siraz.dj0092@gmail.com,Demopass@1
-agent 10,agent10,testmaildybrd@gmail.com,Demopass@1
-agent 4,agent4,amantest70609@outlook.com,Demopass@1
-AGENT 2,agent2,amantest20609@outlook.com,Demopass@1
-agent 3,agent3,amantest0609@outlook.com,Demopass@1
-agent 1,agent1,demotestuser95@gmail.com,Demopass@1
-Aman Singh   ,demoadmin,amantest20609@gmail.com,Demopass@1
-J Meter   ,admin2,testfaveo75@gmail.com,Demopass@1
+name,username,password
+agent 5,agent5,Demopass@1
+agent 7,agent7,Demopass@1
+agent 6,agent6,Demopass@1
+agent 8,agent8,Demopass@1
+agent 9,agent9,Demopass@1
+agent 10,agent10,Demopass@1
+agent 4,agent4,Demopass@1
+AGENT 2,agent2,Demopass@1
+agent 3,agent3,Demopass@1
+agent 1,agent1,Demopass@1
+Aman Singh   ,demoadmin,Demopass@1
+J Meter   ,admin2,Demopass@1
