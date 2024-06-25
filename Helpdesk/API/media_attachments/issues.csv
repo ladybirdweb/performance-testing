@@ -1,0 +1,150 @@
+S.no,Module_name,Test case ID,Test Case Title,Test Steps,Expected Results,Actual Results,Test Data,"Status
+",Date,Comments
+1,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Softwate License ,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+2,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Softwate License List,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+3,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Asset ,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+4,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Asset List,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+5,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..) in View Softwate License ","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+6,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Softwate License List","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+7,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in View Asset ","1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+8,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Asset List","1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+9,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats In SD Reports ,"1. Login As Admin/Agent 
+2. Go to Reports > ServiceDesk Reports > Asset Reports 
+3. Check for Date format in Seeded Date columns",Format should match the set format in Admin Panel,,,,,
+10,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Asset Import,"1. Login As Admin
+2. Go to Service Desk > Asset Import . 
+3. Import a Asset File . 
+4. Check for Date format for Imported Assets. ",Format should match the  set format in Admin Panel ,,,,,
+11,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Emails and In- App Notifications related Asset and Software License ,"1.Check for format in Mails in Gmail 
+2.Check for format in In-app notifications  ",Format should match the set format at the time of alert creation.,,,,,
+12,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Softwate License ,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+13,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Softwate License List,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+14,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Asset ,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+15,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Asset List,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+16,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..) in View Softwate License ","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+17,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Softwate License List","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+18,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in View Asset ","1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+19,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Asset List","1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+20,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats In SD Reports ,"1. Login As Admin/Agent 
+2. Go to Reports > ServiceDesk Reports > Asset Reports 
+3. Check for Date format in Seeded Date columns",Format should match the set format in Admin Panel,,,,,
+21,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Asset Import,"1. Login As Admin
+2. Go to Service Desk > Asset Import . 
+3. Import a Asset File . 
+4. Check for Date format for Imported Assets. ",Format should match the  set format in Admin Panel ,,,,,
+22,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Emails and In- App Notifications related Asset and Software License ,"1.Check for format in Mails in Gmail 
+2.Check for format in In-app notifications  ",Format should match the set format at the time of alert creation.,,,,,
+23,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Softwate License ,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+24,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Softwate License List,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+25,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Asset ,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+26,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Asset List,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+27,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..) in View Softwate License ","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+28,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Softwate License List","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+29,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in View Asset ","1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+30,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Asset List","1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+31,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats In SD Reports ,"1. Login As Admin/Agent 
+2. Go to Reports > ServiceDesk Reports > Asset Reports 
+3. Check for Date format in Seeded Date columns",Format should match the set format in Admin Panel,,,,,
+32,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Asset Import,"1. Login As Admin
+2. Go to Service Desk > Asset Import . 
+3. Import a Asset File . 
+4. Check for Date format for Imported Assets. ",Format should match the  set format in Admin Panel ,,,,,
+33,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Emails and In- App Notifications related Asset and Software License ,"1.Check for format in Mails in Gmail 
+2.Check for format in In-app notifications  ",Format should match the set format at the time of alert creation.,,,,,
+34,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Softwate License ,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+35,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Softwate License List,"1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+36,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date fields in View Asset ,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Custom Date fields.",Format should match the set format in Admin Panel,,,,,
+37,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Custom Date Fields in Asset List,"1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Custom Date column added manually ",Format should match the set format in Admin Panel,,,,,
+38,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..) in View Softwate License ","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for one license 
+4. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+39,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Softwate License List","1. Login As Admin/Agent 
+2. Go to Software License > All Software License
+3. Click on view Icon for any license 
+4. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+40,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in View Asset ","1. Login As Admin/Agent 
+2. Go to Assets > All Assets
+3. Check for Date format in Seeded Date fields.",Format should match the set format in Admin Panel,,,,,
+41,Release 8.1.2 Test cases>Date Format issue in Asset,,"Check for Seeded Date fields( like produced on , Created at etc..)  in Asset List","1. Login As Admin/Agent 
+2. Go to Assets > All Assets 
+3. Check for Date format in Seeded Date columns added manually if not existing",Format should match the set format in Admin Panel,,,,,
+42,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats In SD Reports ,"1. Login As Admin/Agent 
+2. Go to Reports > ServiceDesk Reports > Asset Reports 
+3. Check for Date format in Seeded Date columns",Format should match the set format in Admin Panel,,,,,
+43,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Asset Import,"1. Login As Admin
+2. Go to Service Desk > Asset Import . 
+3. Import a Asset File . 
+4. Check for Date format for Imported Assets. ",Format should match the  set format in Admin Panel ,,,,,
+44,Release 8.1.2 Test cases>Date Format issue in Asset,,Check for Date formats in Emails and In- App Notifications related Asset and Software License ,"1.Check for format in Mails in Gmail 
+2.Check for format in In-app notifications  ",Format should match the set format at the time of alert creation.,,,,,

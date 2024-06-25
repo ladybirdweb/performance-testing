@@ -1,0 +1,485 @@
+S.no,Module_name,Test case ID,Test Case Title,Test Steps,Expected Results,Actual Results,Test Data,"Status
+",Date,Comments
+1,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Open to Close,
+Agent as Client ","1. Login As Agent (with/without Close Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Close with proper alert ,,,,,
+2,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Close to Close,
+Agent as Client ","1. Login As Agent (with/without Close Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Close with proper alert ,,,,,
+3,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Delete to Close, Agent as Client","1. Login As Agent (with/without Close Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Close with proper alert ,,,,,
+4,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Spam to Close , Agent as Client","1. Login As Agent(with/without Close Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Close with proper alert ,,,,,
+5,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Open to Delete, Agent as Client","1. Login As Agent (with/without Delete Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Delete with proper alert ,,,,,
+6,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Close to Delete, Agent as Client","1. Login As Agent (with/without Delete Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Delete with proper alert ,,,,,
+7,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Delete to Delete, Agent as Client","1. Login As Agent (with/without Delete Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Delete with proper alert ,,,,,
+8,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Spam to Delete, Agent as Client","1. Login As Agent (with/without Delete Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Delete with proper alert ,,,,,
+9,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Open to Open, Agent as Client","1. Login As Agent (with/without Re-Open Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Open with proper alert ,,,,,
+10,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Close to Open, Agent as Client","1. Login As Agent (with/without Re-Open Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Open with proper alert ,,,,,
+11,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Deleted to Open, Agent as Client","1. Login As Agent (with/without Re-Open Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Open with proper alert ,,,,,
+12,Release 8.1.2 Test Cases>Client Change Status,,"Check Change Ticket Status from Spam to Open, Agent as Client","1. Login As Agent (with/without Re-Open Status permissions)
+2. Go to Homepage , View My Tickets 
+3. Click on View Ticket 
+4. Change Status of Tickets ",Ticket Status Should Change to Open with proper alert ,,,,,
+13,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Multiple Tickets , Agent as Client","1. Login As Agent 
+2. Go to Homepage , View My Tickets 
+3. Change Status of Multiple Tickets ",Ticket Status Should Change with proper alert ,,,,,
+14,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Single Tickets and Multiple Tickets , Agent as Client","1. Login As Agent 
+2. Go to Homepage , View My Tickets 
+3. Check the Ticket IDs to Change the Status using Inspect . 
+4. Use the change status api in postman and Check for Return Message ",Return Message should be same as web and the ticket status should be Changed on web,,"API : public/v3/ticket/change-status/ticket_id/status_id
+
+
+Payload to add in Postman Body : panel = Client
+
+",,,
+15,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to close ,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Open to Close",Ticket Status Should Change with proper alert,,,,,
+16,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to spam,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3 Click on View Ticket
+4. Change the Status of the Ticket from open to Spam",Ticket Status Should Change with proper alert,,,,,
+17,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to deleted,Agent(With Permissions)","1. Login as Agent with delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from open to Delete",Ticket Status Should Change with proper alert,,,,,
+18,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to open,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Open",Ticket Status Should Change with proper alert,,,,,
+19,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to deleted,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Delete",Ticket Status Should Change with proper alert,,,,,
+20,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to spam,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+21,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to open,Agent(With Permissions)","1. Login as Agent with delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Open",Ticket Status Should Change with proper alert,,,,,
+22,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to close,Agent(With Permissions)","1. Login as Agent with delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+23,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to spam,Agent(With Permissions)","1. Login as Agent with delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+24,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to open,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+24,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to close,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+26,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to deleted,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+27,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to close,Agent(With Permissions)","1. Login as Agent with close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Close",Ticket Status Should Change with proper alert,,,,,
+28,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to spam,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Spam",Ticket Status Should Change with proper alert,,,,,
+29,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to deleted,Agent(With Permissions)","1. Login as Agent with delete Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Deleted",Ticket Status Should Change with proper alert,,,,,
+30,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to close,Agent(With Permissions)","1. Login as Agent with close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+31,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to spam,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+32,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- deleted to open,Agent(With Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Open",Ticket Status Should Change with proper alert,,,,,
+33,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to open,Agent(With Permissions)","1. Login as Agent with Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",Ticket Status Should Change with proper alert,,,,,
+34,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to spam,Agent(With Permissions)","1. Login as Agent with Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",Ticket Status Should Change with proper alert,,,,,
+35,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- close to deleted,Agent(With Permissions)","1. Login as Agent with Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+36,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to open,Agent(With Permissions)","1. Login as Agent 
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+37,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to close ,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of Multiple Tickets from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+38,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to deleted,Agent(With Permissions)","1. Login as Agent with close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Multiple Tickets from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+39,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Single Tickets and Multiple Tickets ,Agent(With Permissions)","1. Login As Agent 
+2. Go to Homepage , View My Tickets 
+3. Check the Ticket IDs to Change the Status using Inspect . 
+4. Use the change status api in postman and Check for Return Message ",Return Message should be same as web and the ticket status should be Changed on web ,,"API : public/v3/ticket/change-status/ticket_id/status_id
+
+Payload not needed
+
+",,,
+40,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to close ,Agent(Without Permissions)","1. Login as Agent without close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Open to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+41,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to spam,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3 Click on View Ticket
+4. Change the Status of the Ticket from open to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+42,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to deleted,Agent(Without Permissions)","1. Login as Agent without delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from open to Delete",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+43,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to open,Agent(Without Permissions)","1. Login as Agent without close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+44,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to deleted,Agent(Without Permissions)","1. Login as Agent without close ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Delete",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+45,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to spam,Agent(Without Permissions)","1. Login as Agent without close ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+46,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to open,Agent(Without Permissions)","1. Login as Agent without delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+47,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to close,Agent(Without Permissions)","1. Login as Agent without delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+48,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to spam,Agent(Without Permissions)","1. Login as Agent without delete ticket Permission
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+49,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to open,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+50,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to close,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+51,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to deleted,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Deleted",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+52,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to close,Agent(Without Permissions)","1. Login as Agent without close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+53,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to spam,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+54,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to deleted,Agent(Without Permissions)","1. Login as Agent without delete Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Deleted",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+55,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to close,Agent(Without Permissions)","1. Login as Agent without close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Deleted to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+56,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to spam,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+57,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- deleted to open,Agent(Without Permissions)","1. Login as Agent
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+58,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to open,Agent(Without Permissions)","1. Login as Agent without Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+59,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to spam,Agent(Without Permissions)","1. Login as Agent without Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+60,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- close to deleted,Agent(Without Permissions)","1. Login as Agent without Close Ticket Permission
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Spam",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+61,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to open,Agent(Without Permissions)","1. Login as Agent 
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Spam to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+61,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to close ,Agent(Without Permissions)","1. Login as Agent without close ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of Multiple Tickets from Spam to Close",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+62,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to deleted,Agent(Without Permissions)","1. Login as Agent without delete ticket Permission
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Multiple Tickets from Spam to Deleted",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+63,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Single Tickets and Multiple Tickets ,Agent(Without Permissions)","1. Login As Agent 
+2. Go to Homepage , View My Tickets 
+3. Check the Ticket IDs to Change the Status using Inspect . 
+4. Use the change status api in postman and Check for Return Message ",Return Message should be same as web and the ticket status should not change on web ,,"API : public/v3/ticket/change-status/ticket_id/status_id
+
+Payload not needed
+
+",,,
+64,Release 8.1.2 Test Cases>Client Change Status,,"Change status to close with associated open tasks ,Agent(With Permissions): ","1. Login as Agent/Admin .
+2. Go to inbox 
+3. Attach an Open Task to the ticket . 
+4. Try to change the Status of the Ticket ","It should throw the alert Selected ticket task is pending, unable to change status. Please complete the task to proceed
+and Status should not change",,,,,
+65,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to close ,as client ","1. Login as client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Open to Close",Ticket Status Should Change with proper alert,,,,,
+66,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to spam ,as client ","1. Login as Client
+2. Go to Inbox
+3 Click on View Ticket
+4. Change the Status of the Ticket from open to Spam",Ticket Status Should Change with proper alert,,,,,
+67,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to deleted,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from open to Delete",Ticket Status Should Change with proper alert,,,,,
+68,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to open,as client ","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Open",Ticket Status Should Change with proper alert,,,,,
+69,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to deleted,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Delete",Ticket Status Should Change with proper alert,,,,,
+70,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to spam,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+71,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to open,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Open",Ticket Status Should Change with proper alert,,,,,
+72,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to close,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+73,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to spam,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+74,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to open,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+75,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to close,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+76,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to deleted,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+77,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to close,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Close",Ticket Status Should Change with proper alert,,,,,
+78,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to spam,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Spam",Ticket Status Should Change with proper alert,,,,,
+79,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to deleted,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Deleted",Ticket Status Should Change with proper alert,,,,,
+80,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to close,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+81,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to spam,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+82,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- deleted to open,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Open",Ticket Status Should Change with proper alert,,,,,
+83,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to open,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",Ticket Status Should Change with proper alert,,,,,
+84,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to spam,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",Ticket Status Should Change with proper alert,,,,,
+85,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- close to deleted,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+86,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to open,as client ","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+87,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to close ,as client ","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of Multiple Tickets from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+88,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to deleted,as client ","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Multiple Tickets from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+89,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Single Tickets and Multiple Tickets ,as client ","1. Login as Client
+2. Go to Homepage , View My Tickets 
+3. Check the Ticket IDs to Change the Status using Inspect . 
+4. Use the change status api in postman and Check for Return Message ",Ticket Status Should Change with proper alert,,"API : public/v3/ticket/change-status/ticket_id/status_id
+
+Payload not needed
+
+",,,
+90,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to close ,as Organization Manager","1. Login as client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Open to Close",Ticket Status Should Change with proper alert,,,,,
+91,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3 Click on View Ticket
+4. Change the Status of the Ticket from open to Spam",Ticket Status Should Change with proper alert,,,,,
+92,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Open to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from open to Delete",Ticket Status Should Change with proper alert,,,,,
+93,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to open,as Organization Manager","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+94,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Delete",Ticket Status Should Change with proper alert,,,,,
+95,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-close to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+96,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to open,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+97,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to close,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+98,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-Deleted to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+99,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to open,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+100,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to close,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+101,Release 8.1.2 Test Cases>Client Change Status,,"Change status a single ticket-spam to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Ticket
+4. Change the Status of the Ticket from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+102,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to close,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Close",Ticket Status Should Change with proper alert,,,,,
+103,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Spam",Ticket Status Should Change with proper alert,,,,,
+104,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Open to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Open to Deleted",Ticket Status Should Change with proper alert,,,,,
+105,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to close,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Multiple Tickets from Deleted to Close",Ticket Status Should Change with proper alert,,,,,
+106,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Deleted to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Spam",Ticket Status Should Change with proper alert,,,,,
+107,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- deleted to open,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Deleted to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+108,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to open,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",It should Throw the Alert Message Permission Denied you do not have the Permission to access the Request Page,,,,,
+109,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- Close to spam,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Open",Ticket Status Should Change with proper alert,,,,,
+110,Release 8.1.2 Test Cases>Client Change Status,,"Change status of multiple tickets- close to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Close to Spam",Ticket Status Should Change with proper alert,,,,,
+111,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to open,as Organization Manager","1. Login as Client
+2. Go to Inbox
+3. Click on View Tickets
+4 Change the Status of Mutiple Tickets from Spam to Open",Ticket Status Should Change with proper alert,,,,,
+112,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to close ,as Organization Manager","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of Multiple Tickets from Spam to Close",Ticket Status Should Change with proper alert,,,,,
+113,Release 8.1.2 Test Cases>Client Change Status,,"Change status multiple tickets-spam to deleted,as Organization Manager","1. Login as Client
+2. Go to Inbox 
+3. Click on View Ticket
+4. Change the Status of the Multiple Tickets from Spam to Deleted",Ticket Status Should Change with proper alert,,,,,
+114,Release 8.1.2 Test Cases>Client Change Status,,"Check for Change Ticket Status for Single Tickets and Multiple Tickets ,as Organization Manager","1. Login as Client
+2. Go to Homepage , View My Tickets 
+3. Check the Ticket IDs to Change the Status using Inspect . 
+4. Use the change status api in postman and Check for Return Message ",Ticket Status Should Change with proper alert,,"API : public/v3/ticket/change-status/ticket_id/status_id
+
+Payload not needed
+
+",,,
