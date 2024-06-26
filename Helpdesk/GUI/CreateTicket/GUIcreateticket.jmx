@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">0</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">false</stringProp>
+          <stringProp name="script">import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.OutputType;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
+import java.io.File;
+import java.time.Duration;
+import java.io.FileReader;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import java.nio.file.Paths;
+import java.nio.file.Files;
+
+// Set the path to the ChromeDriver executable
+
+// Initialize ChromeOptions
+ChromeOptions options = new ChromeOptions();
+
+options.addArguments(&quot;--headless&quot;);
+options.addArguments(&quot;--window-size=1024,1080&quot;);
+
+// Initialize WebDriver
+WebDriver driver = new ChromeDriver(options);
+
+try {
+    // Start the transaction
+    var threadId = Thread.currentThread().getId();
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
+
+    // Navigate to the URL
+    String Url = ENTER YOUR URL HERE;
+    driver.get(Url);
+
+    Thread.sleep(50);
+
+    File screenshotFile6 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    // Specify the path to save the screenshot
+    String screenshotPath6 = &quot;/Create/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    FileUtils.copyFile(screenshotFile6, new File(screenshotPath6));
+
+    // Click the login menu
+    try {
+        var loginLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(&quot;Login&quot;)));
+        loginLink.click();
+    } catch (Exception e) {
+        log.error(&quot;Request stuck &quot; + e.getMessage());
+        result.setSuccessful(false);
+        result.setResponseMessage(&quot;Request stuck &quot; + e.getMessage());
+        result.setResponseCode(&quot;500&quot;); // Set a response code for the failure
+        result.setResponseData(e.getMessage() + &quot;\n&quot; + getStackTrace(e), &quot;UTF-8&quot;);
+        System.out.println(&quot;Test Run Failed&quot;);
+    }
+
+    // Wait for the login form to appear
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(&quot;user_name&quot;)));
+
+    // Enter username and password
+    var usernameField = driver.findElement(By.name(&quot;user_name&quot;));
+    usernameField.sendKeys(&quot;${username}&quot;);
+
+    var passwordField = driver.findElement(By.name(&quot;password&quot;));
+    passwordField.sendKeys(&quot;${password}&quot;);
+
+    // Login
+    var loginButton = driver.findElement(By.id(&quot;default-login-button&quot;));
+    loginButton.click();
+
+    // Wait for home page
+    wait.until(ExpectedConditions.urlContains(&quot;/home&quot;));
+
+    // Click for Ticket Form
+    var widgetButton = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(&quot;Submit Ticket&quot;)));
+    widgetButton.click();
+
+    // Wait for Client form to render
+    wait.until(ExpectedConditions.urlContains(&quot;/create-ticket&quot;));
+
+    File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    // Specify the path to save the screenshot
+    String screenshotPath1 = &quot;/Create/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    FileUtils.copyFile(screenshotFile1, new File(screenshotPath1));
+
+    var subjectField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(&quot;subject&quot;)));
+    subjectField.sendKeys(&quot;${subject}&quot;);
+
+    var selectPriority = driver.findElement(By.id(&quot;priority_id&quot;));
+    selectPriority.click();
+    List&lt;WebElement&gt; Priorities = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//li[@role=&apos;option&apos;]&quot;)));
+    // Iterate through the options and click the desired one
+    for (WebElement Priority : Priorities) {
+        if (Priority.getText().contains(&quot;High&quot;)) {
+            // Replace &quot;High&quot; with the text of the option you want to select
+            Priority.click();
+            break;
+        }
+    }
+
+    File screenshotFile2 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    // Specify the path to save the screenshot
+    String screenshotPath2 = &quot;/Create/pictures/${username}priority&quot; + threadId + &quot;.png&quot;;
+    FileUtils.copyFile(screenshotFile2, new File(screenshotPath2));
+
+    // ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, selectPriority);
+
+    var selectHelptopic = driver.findElement(By.id(&quot;help_topic_id&quot;));
+
+    ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, selectHelptopic);
+
+    Thread.sleep(100);
+    selectHelptopic.click();
+    List&lt;WebElement&gt; Helptopics = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//li[@role=&apos;option&apos;]&quot;)));
+    // Iterate through the options and click the desired one
+    for (WebElement Helptopic : Helptopics) {
+        if (Helptopic.getText().contains(&quot;Support query&quot;)) {
+            // Replace &quot;High&quot; with the text of the option you want to select
+            Helptopic.click();
+            break;
+        }
+    }
+
+    // Code for TINY MCE
+
+    WebElement iframe = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(&quot;iframe&quot;)));
+    driver.switchTo().frame(iframe);
+    System.out.println(&quot;Switched to iframe successfully.&quot;);
+
+    // Locate the TinyMCE editor body
+    WebElement editorBody = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(&quot;body#tinymce&quot;)));
+    Thread.sleep(100);
+    // Clear any existing content (optional)
+    editorBody.clear();
+
+    // Enter new data into the TinyMCE editor
+    String data = &quot;This is the data to be inserted into the TinyMCE editor.&quot;;
+    editorBody.sendKeys(data);
+
+    // Switch back to the default content (important if you want to interact with elements outside the iframe)
+    driver.switchTo().defaultContent();
+
+    File screenshotFile3 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    // Specify the path to save the screenshot
+    String screenshotPath3 = &quot;/Create/pictures/${username}alldata&quot; + threadId + &quot;.png&quot;;
+    FileUtils.copyFile(screenshotFile3, new File(screenshotPath3));
+
+    // *************** Custom fields ******************
+
+    def csvFile = ENTER CUSTOM FIELD DETIALS CSV FILE PATH HERE;
+    def reader = Files.newBufferedReader(Paths.get(csvFile));
+    def csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
+
+    def fieldTypes = csvParser.getHeaderMap().keySet().toArray(new String[0]);
+
+    csvParser.records.each { record -&gt;
+        for (int colIndex = 0; colIndex &lt; fieldTypes.length; colIndex++) {
+            def field_type = fieldTypes[colIndex];
+            def field_id = record.get(colIndex);
+
+            if (field_id == null || field_id.isEmpty()) {
+                // System.out.println(&quot;Field id is empty&quot;);
+                continue; // Skip empty field IDs
+            }
+                Thread.sleep(400);
+            // Define the value for each field type for demonstration purposes
+            def value = &quot;&quot;;
+
+            switch (field_type) {
+                case &apos;text&apos;:
+                    value = &apos;TestUser&apos;;
+                    System.out.println(field_id);
+                    driver.findElement(By.name(field_id)).sendKeys(value);
+                    break;
+                case &apos;number&apos;:
+                    value = &apos;987654321&apos;;
+                    driver.findElement(By.name(field_id)).sendKeys(value);
+                    break;
+                case &apos;textarea&apos;:
+                    value = &quot;This is a test description&quot;;
+                    driver.findElement(By.name(field_id)).sendKeys(value);
+                    break;
+                case &apos;checkbox&apos;:
+                    def checkbox = driver.findElement(By.id(field_id));
+                    if (!checkbox.isSelected()) {
+                        checkbox.click();
+                    }
+                    break;
+                case &apos;search&apos;:
+                    var searchid = driver.findElement(By.id(field_id));
+
+                    ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, searchid);
+                    searchid.click();
+                    Thread.sleep(500);
+                    List&lt;WebElement&gt; searchvalues = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//li[@role=&apos;option&apos;]&quot;)));
+
+                    for (WebElement searchvalue : searchvalues) {
+                        if (searchvalue.getText().contains(&quot;value&quot;)) {
+                            // Replace &quot;High&quot; with the text of the option you want to select
+                            searchvalue.click();
+                            break;
+                        }
+                    }
+                    break;
+                case &apos;email&apos;:
+                    value = &apos;test&apos; + record.recordNumber + &apos;@example.com&apos;;
+                    driver.findElement(By.name(field_id)).sendKeys(value);
+                    break;
+            }
+        }
+    } 
+
+    def fileInput = driver.findElement(By.id(&quot;file-upload-custom_210&quot;))
+    // Set the file path to the input element
+    String filePath = &quot;${filepath}&quot;;
+    fileInput.sendKeys(filePath)
+
+   
+
+   
+
+    var submitButton = driver.findElement(By.id(&quot;client_form_submit&quot;));
+    submitButton.click();
+
+    ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, widgetButton);
+
+    Thread.sleep(5);
+
+    File screenshotFile4 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    // Specify the path to save the screenshot
+    String screenshotPath4 = &quot;/Create/pictures/${username}submit&quot; + threadId + &quot;.png&quot;;
+    FileUtils.copyFile(screenshotFile4, new File(screenshotPath4));
+
+  
+    var successalert = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(&quot;//a[contains(@href,&quot;+ Url+&quot;&apos;/check-ticket/&apos;)]&quot;)));
+
+    
+
+    String currentUrl = driver.getCurrentUrl();
+    println(currentUrl);
+    // Check if the URL matches the expected pattern and print success message
+    if (currentUrl.contains(Url+&quot;/check-ticket/&quot;)) {
+        log.info(&quot;Ticket Created Successfully&quot;);
+        System.out.println(&quot;Ticket created Successfully&quot;);
+    } else {
+        throw new Exception(&quot;Something went wrong&quot;);
+    }
+} catch (Exception e) {
+    log.error(&quot;An error occurred: &quot; + e.getMessage());
+    System.out.println(&quot;Test Run Failed&quot;);
+    result.setSuccessful(false);
+    result.setResponseMessage(&quot;An error occurred: &quot; + e.getMessage());
+    result.setResponseCode(&quot;500&quot;); // Set a response code for the failure
+    result.setResponseData(e.getMessage() + &quot;\n&quot; + getStackTrace(e), &quot;UTF-8&quot;);
+} finally {
+    // End the transaction
+    SampleResult.sampleEnd();
+
+    // Close the browser
+    driver.quit();
+}</stringProp>
+        </JSR223Sampler>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+            <stringProp name="filename">ENTER USER DETAILS CSV PATH HERE</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">name,username,password</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+            <stringProp name="filename">ENTER CREATE TICKET CSV FILE PATH</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">panel,g-recaptcha-response,scenario,cc,subject,status_id,priority_id,help_topic_id,department_id,description,adhoc_approvers_agent,filepath </stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">true</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
