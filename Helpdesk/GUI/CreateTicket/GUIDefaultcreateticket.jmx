@@ -51,6 +51,7 @@ ChromeOptions options = new ChromeOptions();
 options.addArguments(&quot;--headless&quot;);
 options.addArguments(&quot;--window-size=1024,1080&quot;);
 
+
 // Initialize WebDriver
 WebDriver driver = new ChromeDriver(options);
 
@@ -59,16 +60,18 @@ try {
     var threadId = Thread.currentThread().getId();
 
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
-
+   
     // Navigate to the URL
-    String Url = ENTER YOUR URL HERE;
-    driver.get(Url);
-
+    String URL = ENTER YOUR INSTANCE URL HERE WITHIN DOUBLE QUOTES
+    
+    
+    driver.get(URL);
+    
     Thread.sleep(50);
 
     File screenshotFile6 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath6 = &quot;/Create/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath6 = &quot;/Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile6, new File(screenshotPath6));
 
     // Click the login menu
@@ -110,7 +113,7 @@ try {
 
     File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath1 = &quot;/Create/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath1 = &quot;/Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile1, new File(screenshotPath1));
 
     var subjectField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(&quot;subject&quot;)));
@@ -130,7 +133,7 @@ try {
 
     File screenshotFile2 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath2 = &quot;/Create/pictures/${username}priority&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath2 = &quot;/Defaultcreate/pictures/${username}priority&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile2, new File(screenshotPath2));
 
     // ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, selectPriority);
@@ -172,82 +175,9 @@ try {
 
     File screenshotFile3 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath3 = &quot;/Create/pictures/${username}alldata&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath3 = &quot;/Defaultcreate/pictures/${username}alldata&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile3, new File(screenshotPath3));
 
-    // *************** Custom fields ******************
-
-    def csvFile = ENTER CUSTOM FIELD DETIALS CSV FILE PATH HERE;
-    def reader = Files.newBufferedReader(Paths.get(csvFile));
-    def csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
-
-    def fieldTypes = csvParser.getHeaderMap().keySet().toArray(new String[0]);
-
-    csvParser.records.each { record -&gt;
-        for (int colIndex = 0; colIndex &lt; fieldTypes.length; colIndex++) {
-            def field_type = fieldTypes[colIndex];
-            def field_id = record.get(colIndex);
-
-            if (field_id == null || field_id.isEmpty()) {
-                // System.out.println(&quot;Field id is empty&quot;);
-                continue; // Skip empty field IDs
-            }
-                Thread.sleep(400);
-            // Define the value for each field type for demonstration purposes
-            def value = &quot;&quot;;
-
-            switch (field_type) {
-                case &apos;text&apos;:
-                    value = &apos;TestUser&apos;;
-                    System.out.println(field_id);
-                    driver.findElement(By.name(field_id)).sendKeys(value);
-                    break;
-                case &apos;number&apos;:
-                    value = &apos;987654321&apos;;
-                    driver.findElement(By.name(field_id)).sendKeys(value);
-                    break;
-                case &apos;textarea&apos;:
-                    value = &quot;This is a test description&quot;;
-                    driver.findElement(By.name(field_id)).sendKeys(value);
-                    break;
-                case &apos;checkbox&apos;:
-                    def checkbox = driver.findElement(By.id(field_id));
-                    if (!checkbox.isSelected()) {
-                        checkbox.click();
-                    }
-                    break;
-                case &apos;search&apos;:
-                    var searchid = driver.findElement(By.id(field_id));
-
-                    ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, searchid);
-                    searchid.click();
-                    Thread.sleep(500);
-                    List&lt;WebElement&gt; searchvalues = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//li[@role=&apos;option&apos;]&quot;)));
-
-                    for (WebElement searchvalue : searchvalues) {
-                        if (searchvalue.getText().contains(&quot;value&quot;)) {
-                            // Replace &quot;High&quot; with the text of the option you want to select
-                            searchvalue.click();
-                            break;
-                        }
-                    }
-                    break;
-                case &apos;email&apos;:
-                    value = &apos;test&apos; + record.recordNumber + &apos;@example.com&apos;;
-                    driver.findElement(By.name(field_id)).sendKeys(value);
-                    break;
-            }
-        }
-    } 
-
-    def fileInput = driver.findElement(By.id(&quot;file-upload-custom_210&quot;))
-    // Set the file path to the input element
-    String filePath = &quot;${filepath}&quot;;
-    fileInput.sendKeys(filePath)
-
-   
-
-   
 
     var submitButton = driver.findElement(By.id(&quot;client_form_submit&quot;));
     submitButton.click();
@@ -258,23 +188,24 @@ try {
 
     File screenshotFile4 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath4 = &quot;/Create/pictures/${username}submit&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath4 = &quot;/Defaultcreate/pictures/${username}submit&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile4, new File(screenshotPath4));
 
-  
-    var successalert = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(&quot;//a[contains(@href,&quot;+ Url+&quot;&apos;/check-ticket/&apos;)]&quot;)));
 
-    
+   WebElement alertMessageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(&apos;//*[@id=&quot;alert-message&quot;]/div/span&apos;)))
 
-    String currentUrl = driver.getCurrentUrl();
-    println(currentUrl);
-    // Check if the URL matches the expected pattern and print success message
-    if (currentUrl.contains(Url+&quot;/check-ticket/&quot;)) {
-        log.info(&quot;Ticket Created Successfully&quot;);
-        System.out.println(&quot;Ticket created Successfully&quot;);
-    } else {
-        throw new Exception(&quot;Something went wrong&quot;);
+    // Get the alert text
+    String alertText = alertMessageElement.getText()
+   
+
+    // Check if the alert text indicates a successful reply
+    if (alertText.contains(&quot;Ticket has been created&quot;)) {
+        println(&quot;Ticket Created Succesfully.&quot;)
+    }else{
+    	throw new Exception (&quot;Something Went Wrong&quot;);
     }
+    
+    System.out.println(&quot;Test Over&quot;);
 } catch (Exception e) {
     log.error(&quot;An error occurred: &quot; + e.getMessage());
     System.out.println(&quot;Test Run Failed&quot;);
@@ -292,7 +223,7 @@ try {
         </JSR223Sampler>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
-            <stringProp name="filename">ENTER USER DETAILS CSV PATH HERE</stringProp>
+            <stringProp name="filename">ENTER PATH TO USER DETAILS CSV HERE</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">name,username,password</stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
@@ -304,7 +235,7 @@ try {
           </CSVDataSet>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
-            <stringProp name="filename">ENTER CREATE TICKET CSV FILE PATH</stringProp>
+            <stringProp name="filename">ENTER PATH TO TICKET DETAILS HERE</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">panel,g-recaptcha-response,scenario,cc,subject,status_id,priority_id,help_topic_id,department_id,description,adhoc_approvers_agent,filepath </stringProp>
             <boolProp name="ignoreFirstLine">true</boolProp>
@@ -315,7 +246,7 @@ try {
             <stringProp name="shareMode">shareMode.all</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>

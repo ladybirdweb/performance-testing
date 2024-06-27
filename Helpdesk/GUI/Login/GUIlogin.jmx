@@ -61,7 +61,7 @@ try {
 
     // Navigate to the URL
 
-    String Url = ENTER YOUR URL HERE ;
+    String Url = ENTER YOUR URL HERE WITH IN DOUBLE QUOTES;
     	
     if (!Url.endsWith(&quot;/home&quot;)) {
     Url += &quot;/home&quot;
@@ -174,7 +174,7 @@ try {
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
