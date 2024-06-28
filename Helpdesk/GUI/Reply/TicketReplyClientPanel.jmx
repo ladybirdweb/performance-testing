@@ -42,6 +42,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+import org.apache.jmeter.samplers.SampleResult;
 
 // Set the path to the ChromeDriver executable
 
@@ -54,6 +55,7 @@ options.addArguments(&quot;--window-size=1024,1080&quot;);
 
 // Initialize WebDriver
 WebDriver driver = new ChromeDriver(options);
+SampleResult result = new SampleResult();
 
 try {
     // Start the transaction
@@ -220,14 +222,14 @@ try {
     result.setResponseData(e.getMessage() + &quot;\n&quot; + getStackTrace(e), &quot;UTF-8&quot;);
 } finally {
     // End the transaction
-    SampleResult.sampleEnd();
+  
 
     // Close the browser
     driver.quit();
 }</stringProp>
         </JSR223Sampler>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
             <stringProp name="filename">ENTER PATH TO USER LOGIN DETAILS CSV</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">name,username,password</stringProp>
@@ -239,7 +241,7 @@ try {
             <stringProp name="shareMode">shareMode.all</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
             <stringProp name="filename">ENTER PATH TO REPLY TICKET DETAILS </stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">panel,g-recaptcha-response,scenario,cc,subject,status_id,priority_id,help_topic_id,department_id,description,adhoc_approvers_agent,filepath</stringProp>

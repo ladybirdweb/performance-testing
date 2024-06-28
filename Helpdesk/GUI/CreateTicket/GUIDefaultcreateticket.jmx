@@ -42,6 +42,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+import org.apache.jmeter.samplers.SampleResult;
 
 // Set the path to the ChromeDriver executable
 
@@ -54,12 +55,13 @@ options.addArguments(&quot;--window-size=1024,1080&quot;);
 
 // Initialize WebDriver
 WebDriver driver = new ChromeDriver(options);
+SampleResult result = new SampleResult();
 
 try {
     // Start the transaction
     var threadId = Thread.currentThread().getId();
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10000));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
    
     // Navigate to the URL
     String URL = ENTER YOUR INSTANCE URL HERE WITHIN DOUBLE QUOTES
@@ -110,6 +112,21 @@ try {
 
     // Wait for Client form to render
     wait.until(ExpectedConditions.urlContains(&quot;/create-ticket&quot;));
+
+    var alertmessage = wait.until(ExpectedConditions.elementToBeClickable(By.id(&quot;alert_close&quot;)));
+    
+
+    JavascriptExecutor js = (JavascriptExecutor) driver
+    
+    String script = &quot;&quot;&quot;
+        var closeButton = document.querySelector(&apos;#alert_close&apos;);
+        if (closeButton) {
+            closeButton.click();
+            return &apos;Alert close button found and clicked&apos;;
+        } else {
+            return &apos;Alert close button not found&apos;;
+        }
+    &quot;&quot;&quot;
 
     File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
@@ -215,14 +232,14 @@ try {
     result.setResponseData(e.getMessage() + &quot;\n&quot; + getStackTrace(e), &quot;UTF-8&quot;);
 } finally {
     // End the transaction
-    SampleResult.sampleEnd();
+ 
 
     // Close the browser
     driver.quit();
 }</stringProp>
         </JSR223Sampler>
         <hashTree>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
             <stringProp name="filename">ENTER PATH TO USER DETAILS CSV HERE</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">name,username,password</stringProp>
@@ -234,7 +251,7 @@ try {
             <stringProp name="shareMode">shareMode.all</stringProp>
           </CSVDataSet>
           <hashTree/>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
             <stringProp name="filename">ENTER PATH TO TICKET DETAILS HERE</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">panel,g-recaptcha-response,scenario,cc,subject,status_id,priority_id,help_topic_id,department_id,description,adhoc_approvers_agent,filepath </stringProp>
@@ -284,7 +301,7 @@ try {
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
