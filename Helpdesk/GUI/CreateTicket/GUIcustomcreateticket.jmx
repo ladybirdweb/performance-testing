@@ -5,8 +5,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
@@ -60,11 +58,17 @@ try {
     // Start the transaction
     var threadId = Thread.currentThread().getId();
 
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
     // Navigate to the URL
     String Url = ENTER YOUR INSTANCE URL HERE IN DOUBLE QUOTES;
     driver.get(Url);
+
+    if (!Url.endsWith(&quot;/home&quot;)) {
+    Url += &quot;/home&quot;
+    }
+    driver.get(Url);
+
 
     Thread.sleep(50);
 
@@ -110,9 +114,7 @@ try {
     // Wait for Client form to render
     wait.until(ExpectedConditions.urlContains(&quot;/create-ticket&quot;));
 
-
-    var alertmessage = wait.until(ExpectedConditions.elementToBeClickable(By.id(&quot;alert_close&quot;)));
-    
+    Thread.sleep(7000);
 
     JavascriptExecutor js = (JavascriptExecutor) driver
     
@@ -124,7 +126,11 @@ try {
         } else {
             return &apos;Alert close button not found&apos;;
         }
-    &quot;&quot;&quot;
+        &quot;&quot;&quot;
+
+    String closealert = (String) js.executeScript(script)
+
+    
 
     File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
@@ -238,6 +244,7 @@ try {
                     var searchid = driver.findElement(By.id(field_id));
 
                     ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, searchid);
+                    Thread.sleep(200);
                     searchid.click();
                     Thread.sleep(500);
                     List&lt;WebElement&gt; searchvalues = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(&quot;//li[@role=&apos;option&apos;]&quot;)));

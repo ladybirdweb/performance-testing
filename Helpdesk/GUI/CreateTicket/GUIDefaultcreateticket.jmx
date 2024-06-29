@@ -65,9 +65,11 @@ try {
    
     // Navigate to the URL
     String URL = ENTER YOUR INSTANCE URL HERE WITHIN DOUBLE QUOTES
-    
-    
-    driver.get(URL);
+     	
+    if (!Url.endsWith(&quot;/home&quot;)) {
+    Url += &quot;/home&quot;
+    }
+    driver.get(Url);
     
     Thread.sleep(50);
 
@@ -113,8 +115,7 @@ try {
     // Wait for Client form to render
     wait.until(ExpectedConditions.urlContains(&quot;/create-ticket&quot;));
 
-    var alertmessage = wait.until(ExpectedConditions.elementToBeClickable(By.id(&quot;alert_close&quot;)));
-    
+     Thread.sleep(7000);
 
     JavascriptExecutor js = (JavascriptExecutor) driver
     
@@ -126,7 +127,11 @@ try {
         } else {
             return &apos;Alert close button not found&apos;;
         }
-    &quot;&quot;&quot;
+        &quot;&quot;&quot;
+
+    String closealert = (String) js.executeScript(script)
+
+    Thread.sleep(40);
 
     File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
