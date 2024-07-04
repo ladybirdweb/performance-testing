@@ -64,7 +64,7 @@ try {
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
    
     // Navigate to the URL
-    String URL = ENTER YOUR INSTANCE URL HERE WITHIN DOUBLE QUOTES
+    String Url = ENTER YOUR INSTANCE URL HERE WITHIN DOUBLE QUOTES
      	
     if (!Url.endsWith(&quot;/home&quot;)) {
     Url += &quot;/home&quot;
@@ -75,7 +75,7 @@ try {
 
     File screenshotFile6 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath6 = &quot;/Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath6 = &quot;Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile6, new File(screenshotPath6));
 
     // Click the login menu
@@ -135,7 +135,7 @@ try {
 
     File screenshotFile1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath1 = &quot;/Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath1 = &quot;Defaultcreate/pictures/${username}createpage&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile1, new File(screenshotPath1));
 
     var subjectField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(&quot;subject&quot;)));
@@ -155,7 +155,7 @@ try {
 
     File screenshotFile2 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath2 = &quot;/Defaultcreate/pictures/${username}priority&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath2 = &quot;Defaultcreate/pictures/${username}priority&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile2, new File(screenshotPath2));
 
     // ((JavascriptExecutor) driver).executeScript(&quot;arguments[0].scrollIntoView(true);&quot;, selectPriority);
@@ -197,7 +197,7 @@ try {
 
     File screenshotFile3 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath3 = &quot;/Defaultcreate/pictures/${username}alldata&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath3 = &quot;Defaultcreate/pictures/${username}alldata&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile3, new File(screenshotPath3));
 
 
@@ -210,7 +210,7 @@ try {
 
     File screenshotFile4 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
     // Specify the path to save the screenshot
-    String screenshotPath4 = &quot;/Defaultcreate/pictures/${username}submit&quot; + threadId + &quot;.png&quot;;
+    String screenshotPath4 = &quot;Defaultcreate/pictures/${username}submit&quot; + threadId + &quot;.png&quot;;
     FileUtils.copyFile(screenshotFile4, new File(screenshotPath4));
 
 
